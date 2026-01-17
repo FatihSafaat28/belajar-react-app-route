@@ -3,9 +3,10 @@ import React from "react";
 
 export default function Navbar() {
   const menu = [
-    { tittle: "Home", url: "./" },
+    { tittle: "Home", url: "/" },
     { tittle: "About", url: "about" },
     { tittle: "Contact", url: "contact" },
+    { tittle: "Products", url: "products" },
   ];
   return (
     <div className="flex justify-between">
@@ -13,11 +14,9 @@ export default function Navbar() {
       <div className="flex gap-4">
         {menu.map((item) => {
           return (
-            <div className="font-bold">
-              <Link key={item.tittle} href={item.url}>
-                {item.tittle}
-              </Link>
-            </div>
+            <Link key={item.tittle} href={item.url}>
+              {item.tittle}
+            </Link>
           );
         })}
       </div>
